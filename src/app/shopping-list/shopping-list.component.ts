@@ -4,24 +4,21 @@ import { ShoppingService } from "../services/shopping.service";
 @Component({
   selector: "app-shopping-list",
   templateUrl: "./shopping-list.component.html",
-  styleUrls: ["./shopping-list.component.sass"],
-  providers: [ShoppingService]
+  styleUrls: ["./shopping-list.component.sass"]
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient("apples", 5),
-    new Ingredient("lettuce", 3)
-  ];
+  ingredients: Ingredient[] ;
 
-  constructor() {}
+  constructor(private shoppingService: ShoppingService) {}
 
-  ngOnInit() {}
-
-  addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+  ngOnInit() {
+    // this.shoppingService.onIngredientAdd.subscribe((ing: Ingredient) => this.ingredients = ing);
+    this.ingredients = this.shoppingService.getIngredients();
+    this.shoppingService.ingredientsChange.subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients
+      }
+    )
   }
 
-  deleteIngredient(ingredient: Ingredient) {
-    this.ingredients.splice(this.ingredients.indexOf(ingredient), 1);
-  }
 }
