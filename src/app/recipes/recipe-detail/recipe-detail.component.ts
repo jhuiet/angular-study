@@ -27,12 +27,17 @@ export class RecipeDetailComponent implements OnInit {
       }
     );
   }
-
+  //todo: create a subject subscription in the recipe-list component
   addToList(ingredients: Ingredient[]){
     this.recipeService.addIngredientsToList(this.recipe.ingredients);
   }
 
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route});
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
+    console.log(this.id);
   }
 }
