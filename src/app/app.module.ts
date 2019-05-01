@@ -14,6 +14,16 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingService } from './services/shopping.service';
 import { SelectRecipeComponent } from './select-recipe/select-recipe.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { FlexboxComponent } from './funLearning/flexbox/flexbox.component';
+import { ResponsivePageComponent } from './responsive-page/responsive-page.component';
+import { RecipeService } from './services/recipe.service';
+import { HttpClientModule } from '@angular/common/http';
+
+import { HttpService } from './services/http.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,15 +36,20 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     ShoppingEditComponent,
     DropdownDirective,
     SelectRecipeComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    FlexboxComponent,
+    ResponsivePageComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [ShoppingService],
+  providers: [ShoppingService, RecipeService, HttpService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
