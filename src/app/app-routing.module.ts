@@ -13,12 +13,6 @@ import { SigninComponent } from './auth/signin/signin.component';
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   { path: 'shopping', component: ShoppingListComponent },
-  { path: 'recipes', component: RecipesComponent, children: [
-    { path: '', component: SelectRecipeComponent, pathMatch: 'full' },
-    { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailComponent },
-    { path: ':id/edit', component: RecipeEditComponent }
-  ] },
   { path: 'flex', component: FlexboxComponent },
   { path: 'dan', component: ResponsivePageComponent },
   { path: 'signup', component: SignupComponent },
