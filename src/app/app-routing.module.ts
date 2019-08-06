@@ -12,7 +12,6 @@ import { SigninComponent } from './auth/signin/signin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-  { path: 'shopping', component: ShoppingListComponent },
   { path: 'flex', component: FlexboxComponent },
   { path: 'dan', component: ResponsivePageComponent },
   { path: 'signup', component: SignupComponent },

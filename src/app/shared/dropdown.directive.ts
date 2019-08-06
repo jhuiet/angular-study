@@ -4,6 +4,7 @@ import { Directive, Input, Output, EventEmitter, HostListener, HostBinding } fro
 @Directive({
   selector: '[appDropdown]'
 })
+//add a class when clicked. remove the class when clicked again
 export class DropdownDirective {
   @HostBinding('class.open') isOpen = false;
   @HostListener('click') toggleOpen() {

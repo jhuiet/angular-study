@@ -25,18 +25,19 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
+import { AlertComponent } from './shared/alert/alert.component';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     SelectRecipeComponent,
     FlexboxComponent,
     ResponsivePageComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,9 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    ShoppingListModule
   ],
   providers: [ShoppingService, RecipeService, HttpService, AuthService],
   bootstrap: [AppComponent]

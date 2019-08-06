@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-alert (closeEvent)="closeModal()" [message]="introMessage" *ngIf="newUser"></app-alert>
 <!-- (navigationPage)="setPage($event)" -->
 <div class="container">
   <div class="row">

@@ -14,7 +14,6 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipe: Recipe;
-
   recipeForm: FormGroup;
 
 
@@ -84,6 +83,9 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
+// get ingredients(): FormArray {
+//   return this.recipeForm.get('ingredients') as FormArray;
+// }
   getControls() {
     return(<FormArray>this.recipeForm.get('ingredients')).controls;
   }
